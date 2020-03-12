@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+let n = 0;
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -41,17 +43,24 @@ class Board extends React.Component {
   }
 
   render() {
+    console.log(n);
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
     }
-
     else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      if (n >= 9 && !winner) {
+        status = 'Empate';
+      }
+      else {
+        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        n++;
+      }
     }
+
     return (
-      <div>
+      <div> 
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
