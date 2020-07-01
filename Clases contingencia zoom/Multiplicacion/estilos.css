@@ -1,0 +1,26 @@
+button {
+  border-radius: 8px;
+  background-color: plum;
+  margin: 5px;
+}
+
+h3 {
+  width: 30px;
+  margin: 0;
+  text-align: center;
+}
+
+#resultado {
+  color: blue;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
